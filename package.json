@@ -62,7 +62,13 @@
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.9",
+<<<<<<< HEAD
     "zod": "^3.25.76"
+=======
+    "zod": "^3.25.76",
+    "canvas-confetti": "1.9.2",
+    "@google/genai": "^1.30.0"
+>>>>>>> d7f15a1a3b3a2c236a92d7fe7362f628a4bfd89f
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
