@@ -1,8 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
-import { ArrowRight, Play, Terminal } from 'lucide-react';
-import { TypewriterEffectProps, AnimatedCounterProps, HeroProps } from './HeroTypes';
-import { Button } from '@/components/ui/button';
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+import { ArrowRight, Play, Terminal } from "lucide-react";
+import {
+  TypewriterEffectProps,
+  AnimatedCounterProps,
+  HeroProps,
+} from "./HeroTypes";
+import { Button } from "@/components/ui/button";
 
 const TypewriterEffect: React.FC<TypewriterEffectProps> = ({ words }) => {
   const [index, setIndex] = useState(0);
@@ -36,9 +40,12 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({ words }) => {
       return;
     }
 
-    const timeout = setTimeout(() => {
-      setSubIndex((prev) => prev + (reverse ? -1 : 1));
-    }, reverse ? 75 : 150);
+    const timeout = setTimeout(
+      () => {
+        setSubIndex((prev) => prev + (reverse ? -1 : 1));
+      },
+      reverse ? 75 : 150
+    );
 
     return () => clearTimeout(timeout);
   }, [subIndex, index, reverse, words]);
@@ -46,16 +53,25 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({ words }) => {
   return (
     <span className="gradient-text min-h-[1.2em] inline-block">
       {words[index].substring(0, subIndex)}
-      <span className={`${blink ? 'opacity-100' : 'opacity-0'} ml-1 text-primary-400`}>|</span>
+      <span
+        className={`${
+          blink ? "opacity-100" : "opacity-0"
+        } ml-1 text-primary-400`}
+      >
+        |
+      </span>
     </span>
   );
 };
 
-const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, suffix = '' }) => {
+const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
+  value,
+  suffix = "",
+}) => {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, { damping: 50, stiffness: 100 });
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   useEffect(() => {
     if (isInView) {
@@ -64,7 +80,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, suffix = '' })
   }, [isInView, value, motionValue]);
 
   useEffect(() => {
-    return springValue.on('change', (latest) => {
+    return springValue.on("change", (latest) => {
       if (ref.current) {
         ref.current.textContent = Math.floor(latest).toLocaleString() + suffix;
       }
@@ -75,17 +91,26 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, suffix = '' })
 };
 
 const Hero: React.FC<HeroProps> = () => {
-  const roles = ['Frontend Developer', 'IT Professional', 'Data Analyst', 'Graphics Designer'];
+  const roles = [
+    "Frontend Developer",
+    "IT Professional",
+    "Data Analyst",
+    "Graphics Designer",
+  ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section className="pb-12 relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary-600/20 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-primary-300 text-sm font-medium mb-8">
             <Terminal className="w-4 h-4" />
             Portfolio & Resume
@@ -116,8 +141,8 @@ const Hero: React.FC<HeroProps> = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Passionate about crafting digital experiences, analyzing data, and solving complex technical problems. Welcome
-          to my personal portfolio.
+          Passionate about crafting digital experiences, analyzing data, and
+          solving complex technical problems. Welcome to my personal portfolio.
         </motion.p>
 
         <motion.div
@@ -126,10 +151,14 @@ const Hero: React.FC<HeroProps> = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button size="lg" onClick={() => (window.location.href = '#contact')}>
+          <Button size="lg" onClick={() => (window.location.href = "#contact")}>
             Contact Me <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
-          <Button variant="outline" size="lg" onClick={() => (window.location.href = '#work')}>
+          <Button
+            variant="outline"
+            size="lg"
+            onClick={() => (window.location.href = "#work")}
+          >
             View Projects <Play className="ml-2 w-4 h-4 fill-current" />
           </Button>
         </motion.div>
@@ -143,21 +172,29 @@ const Hero: React.FC<HeroProps> = () => {
         >
           <div>
             <AnimatedCounter value={5} suffix="+" />
-            <p className="text-gray-500 text-sm uppercase tracking-wider mt-1">Years Experience</p>
+            <p className="text-gray-500 text-sm uppercase tracking-wider mt-1">
+              Years Experience
+            </p>
           </div>
           <div>
             <AnimatedCounter value={20} suffix="+" />
-            <p className="text-gray-500 text-sm uppercase tracking-wider mt-1">Projects Done</p>
+            <p className="text-gray-500 text-sm uppercase tracking-wider mt-1">
+              Projects Done
+            </p>
           </div>
           <div>
             <div className="flex items-center justify-center gap-0.5">
               <AnimatedCounter value={100} suffix="%" />
             </div>
-            <p className="text-gray-500 text-sm uppercase tracking-wider mt-1">Commitment</p>
+            <p className="text-gray-500 text-sm uppercase tracking-wider mt-1">
+              Commitment
+            </p>
           </div>
           <div>
             <div className="text-3xl font-bold text-white">24/7</div>
-            <p className="text-gray-500 text-sm uppercase tracking-wider mt-1">Available</p>
+            <p className="text-gray-500 text-sm uppercase tracking-wider mt-1">
+              Available
+            </p>
           </div>
         </motion.div>
       </div>

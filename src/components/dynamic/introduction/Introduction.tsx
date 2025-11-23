@@ -1,22 +1,26 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Download, ArrowRight, User, Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { IntroductionProps } from './IntroductionTypes';
+import React from "react";
+import { motion } from "framer-motion";
+import { Download, ArrowRight, User, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { IntroductionProps } from "./IntroductionTypes";
 
-const PROFILE_IMAGE = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop';
+const PROFILE_IMAGE =
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop";
 
 const Introduction: React.FC<IntroductionProps> = () => {
   const handleViewPortfolio = () => {
-    window.location.href = '#work';
+    window.location.href = "#work";
   };
 
   const handleContactMe = () => {
-    window.location.href = '#contact';
+    window.location.href = "#contact";
   };
 
   return (
-    <section id="about" className="py-24 bg-dark-800/50 relative overflow-hidden border-y border-white/5">
+    <section
+      id="about"
+      className="py-24 bg-dark-800/50 relative overflow-hidden border-y border-white/5"
+    >
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary-600/10 blur-[100px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-blue-600/10 blur-[100px] rounded-full pointer-events-none" />
 
@@ -42,7 +46,9 @@ const Introduction: React.FC<IntroductionProps> = () => {
                   <Sparkles className="w-3 h-3" />
                   <span>IT Specialist & Designer</span>
                 </div>
-                <h3 className="text-2xl font-bold text-white font-heading">Muhammad Saad Satti</h3>
+                <h3 className="text-2xl font-bold text-white font-heading">
+                  Muhammad Saad Satti
+                </h3>
               </div>
             </div>
 
@@ -67,20 +73,25 @@ const Introduction: React.FC<IntroductionProps> = () => {
 
             <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
               <p>
-                I'm currently working as a Computer Operator and IT Support Specialist at Rawalpindi Polytechnic
-                Institute, where I provide technical support and manage digital systems. My journey began with a passion
-                for technology and design, which led me to develop expertise in IT support, system maintenance, and
-                graphic design using Adobe Photoshop and Illustrator.
+                I'm currently working as a Computer Operator and IT Support
+                Specialist at Rawalpindi Polytechnic Institute, where I provide
+                technical support and manage digital systems. My journey began
+                with a passion for technology and design, which led me to
+                develop expertise in IT support, system maintenance, and graphic
+                design using Adobe Photoshop and Illustrator.
               </p>
               <p>
-                I'm currently pursuing my Associate Degree in Computer and Information Science at Virtual University of
-                Pakistan, building on my foundation from Punjab Group of Colleges. With experience ranging from IT
-                operations to freelance graphic design, I bring a unique blend of technical proficiency and creative
+                I'm currently pursuing my Associate Degree in Computer and
+                Information Science at Virtual University of Pakistan, building
+                on my foundation from Punjab Group of Colleges. With experience
+                ranging from IT operations to freelance graphic design, I bring
+                a unique blend of technical proficiency and creative
                 problem-solving to every project.
               </p>
               <p>
-                I'm passionate about bridging the gap between technology and creativity, constantly learning new skills,
-                and helping others solve their technical challenges.
+                I'm passionate about bridging the gap between technology and
+                creativity, constantly learning new skills, and helping others
+                solve their technical challenges.
               </p>
             </div>
 
