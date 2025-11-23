@@ -1,10 +1,12 @@
 import React from 'react';
-import { Hero } from '@/components';
+import { Hero, Introduction, CaseStudies } from '@/components';
 
 const Home: React.FC = () => {
   return (
     <main>
       <Hero />
+      <Introduction />
+      <CaseStudies />
     </main>
   );
 };
