@@ -6,3 +6,7 @@ export { default as CallToAction } from './common/callToAction/CallToAction';
 export { default as Service } from './dynamic/service/Service';
 export { default as Testimonial } from './dynamic/testimonial/Testimonial';
 export { default as Faq } from './dynamic/faq/Faq';
+export { default as AiStrategy } from './dynamic/aiTools/strategy/AiStrategy';
+export { default as Skills } from './dynamic/skills/Skills';
+export { default as Education } from './dynamic/education/Education';
+export { default as Experience } from './dynamic/experience/Experience';

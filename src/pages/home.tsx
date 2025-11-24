@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hero, Introduction, CaseStudies, CallToAction, Service, Testimonial, Faq } from '@/components';
+import { Hero, Introduction, CaseStudies, CallToAction, Service, Testimonial, Faq, AiStrategy } from '@/components';
 
 const Home: React.FC = () => {
   return (
@@ -8,6 +8,7 @@ const Home: React.FC = () => {
       <Introduction />
       <CaseStudies />
       <Service />
+      <AiStrategy />
       <Testimonial />
       <Faq />
       <CallToAction />
