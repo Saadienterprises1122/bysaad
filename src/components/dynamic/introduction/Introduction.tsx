@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { Download, ArrowRight, User, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { IntroductionProps } from "./IntroductionTypes";
+import { ProfileImage } from "@/assets"; // ✅ Import from assets index.ts
 
-const PROFILE_IMAGE =
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop";
+const PROFILE_IMAGE = ProfileImage; // ✅ Use imported image
 
 const Introduction: React.FC<IntroductionProps> = () => {
   const handleViewPortfolio = () => {
@@ -36,7 +36,7 @@ const Introduction: React.FC<IntroductionProps> = () => {
             <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-[4/5] md:aspect-square lg:aspect-[4/5] max-w-md mx-auto lg:mx-0">
               <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent z-10" />
               <img
-                src={PROFILE_IMAGE}
+                src={PROFILE_IMAGE} // ✅ Using the imported image
                 alt="Muhammad Saad Satti"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
