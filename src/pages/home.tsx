@@ -5,9 +5,9 @@ const Home: React.FC = () => {
   return (
     <main>
       <Hero />
+      <Service />
       <Introduction />
       <CaseStudies />
-      <Service />
       <AiStrategy />
       <Testimonial />
       <Faq />
