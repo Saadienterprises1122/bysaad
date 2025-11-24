@@ -11,10 +11,11 @@ export const SERVICES: ServiceItem[] = [
       'Single Page Applications (SPA)',
       'Progressive Web Apps (PWA)',
       'Frontend Development with React',
+      'WordPress Development with React',
       'Responsive UI/UX Implementation',
       'API Integration & Backend Connection'
     ],
-    tools: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js', 'Vite', 'Git', 'REST APIs']
+    tools: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js', 'Vite','Elementor Pro','Gutenberg', 'Git', 'REST APIs']
   },
   {
     icon: Palette,
@@ -27,6 +28,7 @@ export const SERVICES: ServiceItem[] = [
       'Business Card Design',
       'Poster & Banner Design',
       'Digital Illustrations'
+      'UI/UX Desing'
     ],
     tools: ['Adobe Photoshop', 'Adobe Illustrator', 'Figma', 'Canva', 'CorelDRAW']
   },
