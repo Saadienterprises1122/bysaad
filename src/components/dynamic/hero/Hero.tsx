@@ -7,6 +7,7 @@ import {
   HeroProps,
 } from "./HeroTypes";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const TypewriterEffect: React.FC<TypewriterEffectProps> = ({ words }) => {
   const [index, setIndex] = useState(0);
@@ -146,22 +147,24 @@ const Hero: React.FC<HeroProps> = () => {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <Button size="lg" onClick={() => (window.location.href = "/contact")}>
-            Contact Me <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            onClick={() => (window.location.href = "#work")}
-          >
-            View Projects <Play className="ml-2 w-4 h-4 fill-current" />
-          </Button>
-        </motion.div>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.3 }}
+  className="flex flex-col sm:flex-row items-center justify-center gap-4"
+>
+  <Link to="/contact">
+    <Button size="lg">
+      Contact Me <ArrowRight className="ml-2 w-5 h-5" />
+    </Button>
+  </Link>
+  <Button
+    variant="outline"
+    size="lg"
+    onClick={() => (window.location.href = "#work")}
+  >
+    View Projects <Play className="ml-2 w-4 h-4 fill-current" />
+  </Button>
+</motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
