@@ -27,7 +27,7 @@ export const SERVICES: ServiceItem[] = [
       'Marketing Materials (Flyers, Brochures)',
       'Business Card Design',
       'Poster & Banner Design',
-      'Digital Illustrations'
+      'Digital Illustrations',
       'UI/UX Desing'
     ],
     tools: ['Adobe Photoshop', 'Adobe Illustrator', 'Figma', 'Canva', 'CorelDRAW']
