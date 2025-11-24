@@ -151,7 +151,7 @@ const Hero: React.FC<HeroProps> = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button size="lg" onClick={() => (window.location.href = "#contact")}>
+          <Button size="lg" onClick={() => (window.location.href = "/contact")}>
             Contact Me <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
           <Button
