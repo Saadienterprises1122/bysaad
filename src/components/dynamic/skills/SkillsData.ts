@@ -9,13 +9,11 @@ import {
   PenTool,
   Layers,
   Smartphone,
-  Cpu,
   Wifi,
   Wrench,
   Monitor,
   Command,
   HardDrive,
-  Shield,
   Database,
   FileSpreadsheet,
   BarChart3,
@@ -47,13 +45,11 @@ export const SKILLS_DATA: SkillItem[] = [
   { name: 'Prototyping', category: 'Design', icon: Smartphone },
   
   // IT Support
-  { name: 'Hardware Repair', category: 'IT Support', icon: Cpu },
   { name: 'Network Config', category: 'IT Support', icon: Wifi },
   { name: 'Troubleshooting', category: 'IT Support', icon: Wrench },
   { name: 'System Admin', category: 'IT Support', icon: Monitor },
   { name: 'Windows OS', category: 'IT Support', icon: Command },
   { name: 'Data Backup', category: 'IT Support', icon: HardDrive },
-  { name: 'Cyber Security', category: 'IT Support', icon: Shield },
   
   // Data Analysis
   { name: 'SQL', category: 'Data Analysis', icon: Database },
