@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sparkles, Download } from 'lucide-react';
+import { Menu, X, Sparkles /*, Download*/ } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { NAV_ITEMS } from './NavbarData';
 import { NavbarProps } from './NavbarTypes';
@@ -18,8 +18,10 @@ const Navbar: React.FC<NavbarProps> = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleDownloadCV = () => {
-    window.open('/resume.pdf', '_blank');
+  // ⭐ WhatsApp Redirect
+  const handleHireMe = () => {
+    const phone = "447393642179";
+    window.open(`https://wa.me/${phone}`, "_blank");
   };
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -80,11 +82,14 @@ const Navbar: React.FC<NavbarProps> = () => {
                 </a>
               ))}
             </div>
+
             <div className="flex items-center gap-3">
-              <Button variant="outline" size="sm" onClick={handleDownloadCV} className="hidden lg:inline-flex">
+              {/* <Button variant="outline" size="sm" className="hidden lg:inline-flex">
                 <Download className="w-4 h-4 mr-2" /> Download CV
-              </Button>
-              <Button variant="default" size="sm" onClick={(e) => handleNavClick(e as any, '/#contact')}>
+              </Button> */}
+
+              {/* ⭐ Hire Me → WhatsApp */}
+              <Button variant="default" size="sm" onClick={handleHireMe}>
                 Hire Me
               </Button>
             </div>
@@ -115,11 +120,14 @@ const Navbar: React.FC<NavbarProps> = () => {
                   {item.label}
                 </a>
               ))}
+
               <div className="pt-4 space-y-3">
-                <Button variant="outline" className="w-full justify-center" onClick={handleDownloadCV}>
+                {/* <Button variant="outline" className="w-full justify-center">
                   <Download className="w-4 h-4 mr-2" /> Download CV
-                </Button>
-                <Button variant="default" className="w-full justify-center" onClick={(e) => handleNavClick(e as any, '/#contact')}>
+                </Button> */}
+
+                {/* ⭐ Mobile Hire Me → WhatsApp */}
+                <Button variant="default" className="w-full justify-center" onClick={handleHireMe}>
                   Hire Me
                 </Button>
               </div>
