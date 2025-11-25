@@ -9,7 +9,7 @@ const CaseStudies: React.FC<CaseStudiesProps> = () => {
   const navigate = useNavigate();
 
   const shareCaseStudy = (platform: SharePlatform, title: string, id: string) => {
-    const url = encodeURIComponent(`https://saadsatti.com/projects/${id}`);
+    const url = encodeURIComponent(`https://portfolio-bysaad.netlify.app/projects/${id}`);
     const text = encodeURIComponent(`Check out this project by Muhammad Saad Satti: ${title}`);
 
     const shareUrls: Record<SharePlatform, string> = {
