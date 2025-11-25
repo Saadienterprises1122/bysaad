@@ -43,7 +43,7 @@ const Service: React.FC<ServiceProps> = () => {
 
   const handleContactClick = () => {
     setSelectedService(null);
-    window.location.href = '#contact';
+    window.location.href = '/contact';
   };
 
   return (
