@@ -1,12 +1,26 @@
 import React from 'react';
-import { Skills, Education, Experience } from '@/components';
+import { 
+  Introduction, 
+  Experience, 
+  Education, 
+  Skills, 
+  Certifications, 
+  Languages, 
+  Faq, 
+  CallToAction 
+} from '@/components';
 
 const About: React.FC = () => {
   return (
     <main>
-      <Skills />
-      <Education />
+      <Introduction />
       <Experience />
+      <Education />
+      <Skills />
+      <Certifications />
+      <Languages />
+      <Faq />
+      <CallToAction />
     </main>
   );
 };
