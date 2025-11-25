@@ -11,12 +11,12 @@ const CallToAction: React.FC<CallToActionProps> = () => {
   const navigate = useNavigate();
 
   const handleStartProject = () => {
-    navigate('/#contact');
+    navigate('/contact');
     setTimeout(() => {
       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
     }, 100);
   };
-
+const EMAIL_ADDRESS = "mxaadxatti.official@gmail.com";
   const handleEmailClick = () => {
     window.location.href = `mailto:${EMAIL_ADDRESS}`;
   };
