@@ -18,6 +18,7 @@ export { default as Contact } from './dynamic/contact/Contact';
 
 // AI Tools Components
 export { default as AiStrategy } from './dynamic/aiTools/strategy/AiStrategy';
+export { default as AiLab } from './dynamic/aiTools/lab/AiLab';
 
 // Common Components
 export { default as CallToAction } from './common/callToAction/CallToAction';
