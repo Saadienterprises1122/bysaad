@@ -10,6 +10,7 @@ import {
   CallToAction 
 } from '@/components';
 import { User } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
   return (
