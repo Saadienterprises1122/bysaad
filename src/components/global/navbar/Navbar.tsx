@@ -20,7 +20,7 @@ const Navbar: React.FC<NavbarProps> = () => {
 
   // ⭐ WhatsApp Redirect
   const handleHireMe = () => {
-    const phone = "447393642179";
+    const phone = "923472788527";
     window.open(`https://wa.me/${phone}`, "_blank");
   };
 
