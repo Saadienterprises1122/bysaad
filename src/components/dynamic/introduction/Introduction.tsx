@@ -9,11 +9,11 @@ const PROFILE_IMAGE = ProfileImage; // ✅ Use imported image
 
 const Introduction: React.FC<IntroductionProps> = () => {
   const handleViewPortfolio = () => {
-    window.location.href = "#work";
+    window.location.href = "/projects";
   };
 
   const handleContactMe = () => {
-    window.location.href = "#contact";
+    window.location.href = "/contact";
   };
 
   return (
