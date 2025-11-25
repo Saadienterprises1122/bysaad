@@ -1,5 +1,5 @@
 import React from 'react';
-import { User,
+import { 
   Introduction, 
   Experience, 
   Education, 
@@ -9,6 +9,7 @@ import { User,
   Faq, 
   CallToAction 
 } from '@/components';
+import { User } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
