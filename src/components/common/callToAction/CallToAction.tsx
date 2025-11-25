@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { CallToActionProps } from './CallToActionTypes';
 
-const EMAIL_ADDRESS = 'mxaadxatti.official@gmail.com';
+const EMAIL_ADDRESS = "mxaadxatti.official@gmail.com";
 
 const CallToAction: React.FC<CallToActionProps> = () => {
   const navigate = useNavigate();
@@ -16,15 +16,24 @@ const CallToAction: React.FC<CallToActionProps> = () => {
       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
     }, 100);
   };
-const EMAIL_ADDRESS = "mxaadxatti.official@gmail.com";
+
+  // Email function with Gmail fallback
   const handleEmailClick = () => {
-    window.location.href = `mailto:${EMAIL_ADDRESS}`;
+    const mailtoLink = `mailto:${EMAIL_ADDRESS}`;
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL_ADDRESS}`;
+
+    // Try "mailto:"
+    const newWindow = window.open(mailtoLink);
+
+    // If blocked, fallback to Gmail
+    if (!newWindow) {
+      window.open(gmailLink, "_blank");
+    }
   };
 
   return (
     <section className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-dark-900 to-primary-900/20" />
-
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-600/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
 
@@ -57,6 +66,7 @@ const EMAIL_ADDRESS = "mxaadxatti.official@gmail.com";
               <Button size="lg" onClick={handleStartProject} className="w-full sm:w-auto">
                 Start a Project <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
+
               <Button variant="outline" size="lg" onClick={handleEmailClick} className="w-full sm:w-auto">
                 <Mail className="mr-2 w-5 h-5" /> Email Me
               </Button>
