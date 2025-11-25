@@ -160,7 +160,7 @@ const Hero: React.FC<HeroProps> = () => {
   <Button
     variant="outline"
     size="lg"
-    onClick={() => (window.location.href = "#work")}
+    onClick={() => (window.location.href = "/projects")}
   >
     View Projects <Play className="ml-2 w-4 h-4 fill-current" />
   </Button>
