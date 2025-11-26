@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, ExternalLink, Github, Layers, Rocket } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
+import { ArrowLeft, Calendar, ExternalLink, Layers, Rocket, Eye } from 'lucide-react';
 import { CallToAction } from '@/components';
 import { Button } from '@/components/ui/button';
+import ProjectGallery from '@/components/dynamic/caseStudies/ProjectGallery';
 
 // Import case studies data
 import { CASE_STUDIES } from '@/components/dynamic/caseStudies/CaseStudiesData';
@@ -28,11 +30,28 @@ const ProjectDetails: React.FC = () => {
 
   return (
     <div className="bg-dark-900 min-h-screen pt-20">
+      <Helmet>
+        <title>{project.client} - BySaad Portfolio</title>
+        <meta name="description" content={project.description} />
+        <meta name="keywords" content={`${project.technologies.join(', ')}, ${project.category}, portfolio, web development`} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={`${project.client} - BySaad Portfolio`} />
+        <meta property="og:description" content={project.description} />
+        <meta property="og:image" content={project.image} />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${project.client} - BySaad Portfolio`} />
+        <meta name="twitter:description" content={project.description} />
+        <meta name="twitter:image" content={project.image} />
+      </Helmet>
       
       {/* Header / Hero */}
       <div className="relative h-[60vh] min-h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0 bg-dark-900/60 z-10" />
-        <img src={project.image} alt={project.client} className="w-full h-full object-cover" />
+        <img src={project.image} alt={project.client} loading="eager" className="w-full h-full object-cover" />
         
         <div className="absolute inset-0 z-20 flex flex-col justify-center items-center px-4 text-center">
             <motion.div
@@ -70,11 +89,6 @@ const ProjectDetails: React.FC = () => {
                             <Button onClick={() => window.open(project.liveUrl, '_blank')}>
                                 View Live Site <ExternalLink className="ml-2 w-4 h-4" />
                             </Button>
-                            {project.githubUrl && (
-                                <Button variant="outline" onClick={() => window.open(project.githubUrl, '_blank')}>
-                                    <Github className="mr-2 w-4 h-4" /> Source Code
-                                </Button>
-                            )}
                         </div>
                     )}
                 </div>
@@ -104,7 +118,7 @@ const ProjectDetails: React.FC = () => {
             </div>
 
             {/* Challenge & Solution */}
-            <div className="grid md:grid-cols-2 gap-12">
+            <div className="grid md:grid-cols-2 gap-12 mb-12">
                 {project.challenge && (
                     <div>
                         <div className="flex items-center gap-3 mb-4">
@@ -129,6 +143,24 @@ const ProjectDetails: React.FC = () => {
                     </div>
                 )}
             </div>
+
+            {/* Live Preview Button */}
+            {project.liveUrl && (
+              <div className="flex justify-center pt-8 pb-12 border-t border-white/5">
+                <Button 
+                  size="lg"
+                  onClick={() => window.open(project.liveUrl, '_blank')}
+                  className="group"
+                >
+                  <Eye className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+                  Live Preview
+                  <ExternalLink className="ml-2 w-4 h-4" />
+                </Button>
+              </div>
+            )}
+
+            {/* Project Gallery */}
+            {project.gallery && <ProjectGallery images={project.gallery} projectName={project.client} />}
 
          </div>
       </div>

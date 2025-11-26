@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import SEOHelmet from '@/components/SEOHelmet';
 import { Mail, MapPin } from 'lucide-react';
 import { Contact, Faq } from '@/components';
 
@@ -10,6 +11,11 @@ const ContactUs: React.FC = () => {
 
   return (
     <div className="bg-dark-900 min-h-screen pt-20">
+      <SEOHelmet 
+        title="Contact Me - BySaad Portfolio"
+        description="Get in touch with Muhammad Saad Satti for web development projects, IT support, or collaboration opportunities. Based in Rawalpindi, Pakistan."
+        keywords="Contact BySaad, Hire Frontend Developer, Web Development Services, Rawalpindi Developer, Contact Form"
+      />
       {/* Hero Section */}
       <div className="relative py-20 md:py-28 px-4 text-center overflow-hidden border-b border-white/5">
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary-900/20 rounded-full blur-[120px] pointer-events-none" />

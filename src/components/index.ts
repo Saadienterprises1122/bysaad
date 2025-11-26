@@ -22,3 +22,6 @@ export { default as AiLab } from './dynamic/aiTools/lab/AiLab';
 
 // Common Components
 export { default as CallToAction } from './common/callToAction/CallToAction';
+
+// Utility Components
+export { default as SEOHelmet } from './SEOHelmet';

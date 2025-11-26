@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import SEOHelmet from '@/components/SEOHelmet';
 import { FolderGit2 } from 'lucide-react';
 import { CaseStudies, Faq, CallToAction } from '@/components';
 
@@ -10,6 +11,11 @@ const Projects: React.FC = () => {
 
   return (
     <div className="bg-dark-900 min-h-screen pt-20">
+      <SEOHelmet 
+        title="Projects - BySaad Portfolio"
+        description="Explore my latest web development projects, case studies, and technical experiments. From web applications to data analysis pipelines and design work."
+        keywords="Web Development Projects, Portfolio Projects, Case Studies, React Projects, Data Analysis Projects"
+      />
       {/* Hero Section */}
       <div className="relative py-20 md:py-32 px-4 text-center overflow-hidden border-b border-white/5">
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-purple-900/20 rounded-full blur-[120px] pointer-events-none" />

@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHelmet from '@/components/SEOHelmet';
 import { 
   Introduction, 
   Experience, 
@@ -15,6 +16,11 @@ import { motion } from 'framer-motion';
 const About: React.FC = () => {
   return (
     <main className="bg-dark-900 min-h-screen pt-20">
+      <SEOHelmet 
+        title="About Me - BySaad Portfolio"
+        description="Learn about Muhammad Saad Satti's journey in web development, IT support, and data analysis. Explore my education, professional experience, skills, and certifications."
+        keywords="Muhammad Saad Satti, About BySaad, Frontend Developer Biography, IT Professional, Education, Experience, Skills"
+      />
       {/* Simple Page Header */}
       <div className="relative py-20 md:py-32 px-4 text-center overflow-hidden">
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary-900/20 rounded-full blur-[120px] pointer-events-none" />

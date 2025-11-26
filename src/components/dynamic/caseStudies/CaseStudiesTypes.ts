@@ -10,7 +10,7 @@ export interface CaseStudy {
   technologies: string[];
   year: string;
   liveUrl?: string;
-  githubUrl?: string;
+  gallery?: string[];
 }
 
 export interface CaseStudiesProps {
