@@ -15,7 +15,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vite'],
     year: '2024',
     liveUrl: 'https://bysaad.com',
-    githubUrl: 'https://github.com/bysaad',
+    gallery: [
+      'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2426&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2426&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2426&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2426&auto=format&fit=crop'
+    ],
   },
   {
     id: '2',
@@ -30,6 +35,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       'Built a centralized data pipeline using Python to clean and merge datasets. Created an interactive Power BI dashboard connected to a SQL database for real-time insights.',
     technologies: ['Python', 'Pandas', 'SQL', 'Power BI', 'Excel'],
     year: '2023',
+    gallery: [
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=2670&auto=format&fit=crop'
+    ],
   },
   {
     id: '3',

@@ -1,12 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Twitter, Linkedin, Facebook, Share2 } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { CASE_STUDIES } from './CaseStudiesData';
 import { CaseStudiesProps, SharePlatform } from './CaseStudiesTypes';
 
 const CaseStudies: React.FC<CaseStudiesProps> = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const shareCaseStudy = (platform: SharePlatform, title: string, id: string) => {
     const url = encodeURIComponent(`https://portfolio-bysaad.netlify.app/projects/${id}`);
@@ -39,12 +40,14 @@ const CaseStudies: React.FC<CaseStudiesProps> = () => {
             <h2 className="font-heading text-3xl md:text-5xl font-bold mb-4">Projects & Experience</h2>
             <p className="text-gray-400">A showcase of my professional work and technical projects.</p>
           </div>
-          <Link
-            to="/projects"
-            className="text-primary-400 font-medium hover:text-primary-300 flex items-center gap-2 transition-colors"
-          >
-            View All Projects <ArrowUpRight className="w-4 h-4" />
-          </Link>
+          {location.pathname !== '/projects' && (
+            <Link
+              to="/projects"
+              className="text-primary-400 font-medium hover:text-primary-300 flex items-center gap-2 transition-colors"
+            >
+              View All Projects <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          )}
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -71,6 +74,7 @@ const CaseStudies: React.FC<CaseStudiesProps> = () => {
                   transition={{ duration: 0.5 }}
                   src={study.image}
                   alt={study.client}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/40 to-transparent" />

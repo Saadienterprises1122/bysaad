@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import SEOHelmet from '@/components/SEOHelmet';
 import { Layers } from 'lucide-react';
 import { Service, Faq, CallToAction } from '@/components';
 
@@ -10,6 +11,11 @@ const Services: React.FC = () => {
 
   return (
     <div className="bg-dark-900 min-h-screen pt-20">
+      <SEOHelmet 
+        title="Services - BySaad Portfolio"
+        description="Professional web development, design, data analysis, and IT support services. Custom solutions using React, TypeScript, Python, and modern technologies."
+        keywords="Web Development Services, Frontend Development, UI/UX Design, Data Analysis, IT Support, React Development"
+      />
       {/* Hero Section */}
       <div className="relative py-20 md:py-32 px-4 text-center overflow-hidden border-b border-white/5">
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-900/20 rounded-full blur-[120px] pointer-events-none" />

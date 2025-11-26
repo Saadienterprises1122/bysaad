@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import SEOHelmet from '@/components/SEOHelmet';
 import { Bot } from 'lucide-react';
 import { AiStrategy, CallToAction, Faq } from '@/components';
 import AiLab from '@/components/dynamic/aiTools/lab/AiLab';
@@ -11,6 +12,11 @@ const AiTools: React.FC = () => {
 
   return (
     <div className="bg-dark-900 min-h-screen pt-20">
+      <SEOHelmet 
+        title="AI Tools - BySaad Portfolio"
+        description="Leverage AI-powered tools for content strategy, code optimization, design, and more. Generate creative content, optimize code, and visualize design concepts."
+        keywords="AI Tools, AI Content Strategy, Code Optimization, AI Design Tools, Content Generation, Developer Tools"
+      />
       {/* Hero Section */}
       <div className="relative py-20 md:py-32 px-4 text-center overflow-hidden border-b border-white/5">
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary-900/20 rounded-full blur-[120px] pointer-events-none" />
