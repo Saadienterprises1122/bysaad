@@ -97,9 +97,14 @@ const Certifications: React.FC<CertificationsProps> = () => {
                     <span className="text-xs font-medium text-gray-500 bg-dark-900 px-2 py-1 rounded border border-white/5">{item.date}</span>
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2 line-clamp-2 group-hover:text-primary-300 transition-colors">{item.title}</h3>
-                  <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
-                    <span className="text-sm text-gray-400">{item.issuer}</span>
-                    <span className="text-xs px-2 py-1 rounded bg-white/5 text-gray-500 border border-white/5">{item.category}</span>
+                  <div className="mt-auto pt-4 border-t border-white/5 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-400">{item.issuer}</span>
+                      <span className="text-xs px-2 py-1 rounded bg-white/5 text-gray-500 border border-white/5">{item.category}</span>
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      {item.institute}
+                    </div>
                   </div>
                 </div>
               ))}
