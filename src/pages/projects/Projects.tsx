@@ -38,7 +38,7 @@ const Projects: React.FC = () => {
       </div>
 
       {/* Projects Grid */}
-      <CaseStudies />
+      <CaseStudies showFilters={true} />
 
       {/* FAQ */}
       <Faq />

@@ -5,7 +5,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { CASE_STUDIES } from './CaseStudiesData';
 import { CaseStudiesProps, SharePlatform } from './CaseStudiesTypes';
 
-const CaseStudies: React.FC<CaseStudiesProps> = () => {
+const CaseStudies: React.FC<CaseStudiesProps> = ({ showFilters = false }) => {
   const navigate = useNavigate();
   const location = useLocation();
   
@@ -86,71 +86,73 @@ const CaseStudies: React.FC<CaseStudiesProps> = () => {
         </div>
 
         {/* Filters Section */}
-        <div className="mb-12 space-y-6">
-          {/* Search Bar */}
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
-            <input
-              type="text"
-              placeholder="Search projects by name, description, or technology..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-dark-800 border border-white/10 rounded-xl pl-12 pr-12 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 transition-colors"
-            />
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery('')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
+        {showFilters && (
+          <div className="mb-12 space-y-6">
+            {/* Search Bar */}
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
+              <input
+                type="text"
+                placeholder="Search projects by name, description, or technology..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full bg-dark-800 border border-white/10 rounded-xl pl-12 pr-12 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 transition-colors"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              )}
+            </div>
+
+            {/* Category and Tech Filters */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex-1">
+                <label className="block text-sm font-medium text-gray-400 mb-2">Category</label>
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="w-full bg-dark-800 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors"
+                >
+                  {categories.map(cat => (
+                    <option key={cat} value={cat}>{cat}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="flex-1">
+                <label className="block text-sm font-medium text-gray-400 mb-2">Technology</label>
+                <select
+                  value={selectedTech}
+                  onChange={(e) => setSelectedTech(e.target.value)}
+                  className="w-full bg-dark-800 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors"
+                >
+                  {technologies.map(tech => (
+                    <option key={tech} value={tech}>{tech}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Active Filters and Clear Button */}
+            {(searchQuery || selectedCategory !== 'All' || selectedTech !== 'All') && (
+              <div className="flex items-center justify-between">
+                <div className="text-sm text-gray-400">
+                  Showing {filteredProjects.length} of {CASE_STUDIES.length} projects
+                </div>
+                <button
+                  onClick={clearFilters}
+                  className="text-primary-400 hover:text-primary-300 text-sm font-medium transition-colors"
+                >
+                  Clear All Filters
+                </button>
+              </div>
             )}
           </div>
-
-          {/* Category and Tech Filters */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <div className="flex-1">
-              <label className="block text-sm font-medium text-gray-400 mb-2">Category</label>
-              <select
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full bg-dark-800 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors"
-              >
-                {categories.map(cat => (
-                  <option key={cat} value={cat}>{cat}</option>
-                ))}
-              </select>
-            </div>
-
-            <div className="flex-1">
-              <label className="block text-sm font-medium text-gray-400 mb-2">Technology</label>
-              <select
-                value={selectedTech}
-                onChange={(e) => setSelectedTech(e.target.value)}
-                className="w-full bg-dark-800 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors"
-              >
-                {technologies.map(tech => (
-                  <option key={tech} value={tech}>{tech}</option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          {/* Active Filters and Clear Button */}
-          {(searchQuery || selectedCategory !== 'All' || selectedTech !== 'All') && (
-            <div className="flex items-center justify-between">
-              <div className="text-sm text-gray-400">
-                Showing {filteredProjects.length} of {CASE_STUDIES.length} projects
-              </div>
-              <button
-                onClick={clearFilters}
-                className="text-primary-400 hover:text-primary-300 text-sm font-medium transition-colors"
-              >
-                Clear All Filters
-              </button>
-            </div>
-          )}
-        </div>
+        )}
 
         {/* Projects Grid */}
         <AnimatePresence mode="wait">

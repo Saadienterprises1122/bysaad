@@ -15,6 +15,7 @@ export interface CaseStudy {
 
 export interface CaseStudiesProps {
   className?: string;
+  showFilters?: boolean;
 }
 
 export type SharePlatform = 'twitter' | 'linkedin' | 'facebook';
