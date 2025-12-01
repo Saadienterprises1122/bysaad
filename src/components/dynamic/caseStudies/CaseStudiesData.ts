@@ -1,4 +1,5 @@
 import { CaseStudy } from './CaseStudiesTypes';
+import { FitnessBoltHero, FitnessBoltDesktop, FitnessBoltSchedule } from '@/assets';
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
@@ -24,21 +25,30 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     id: '2',
-    client: 'Business Data Dashboard',
-    category: 'Data Analysis',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop',
-    result: 'Python & SQL',
-    description: 'Analyzed sales data to identify key trends, resulting in a 15% improvement in inventory management.',
+    client: 'Fitness Bolt – Gym Landing Page',
+    category: 'Web Development',
+    image: FitnessBoltHero,
+    result: 'React & Tailwind',
+    description:
+      'A fully responsive, high-conversion gym landing page built to showcase fitness programs, training services, and an innovative AI-powered personal coach experience.',
     challenge:
-      'The client struggled with fragmented sales data across multiple spreadsheets, making it difficult to track inventory turnover and identify best-selling products in real-time.',
+      'To design and develop a modern, energetic gym website that not only highlights services and transformations but also integrates an intelligent AI fitness coach while maintaining seamless performance across all devices.',
     solution:
-      'Built a centralized data pipeline using Python to clean and merge datasets. Created an interactive Power BI dashboard connected to a SQL database for real-time insights.',
-    technologies: ['Python', 'Pandas', 'SQL', 'Power BI', 'Excel'],
-    year: '2023',
+      'Built a feature-rich landing page using React.js and Tailwind CSS with a bold hero section, dynamic class listings, transformation gallery, testimonials, and a streamlined contact form. Added an embedded AI Fitness Coach built with conversational flow logic, offering users personalized workout guidance in real time. Ensured full mobile responsiveness, fast load performance, and engaging UI animations.',
+    technologies: [
+      'React',
+      'JavaScript',
+      'Tailwind CSS',
+      'Framer Motion',
+      'AI API Integration'
+    ],
+    year: '2025',
+    liveUrl: 'https://fitnesebolt.netlify.app/',
     gallery: [
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=2670&auto=format&fit=crop'
+      FitnessBoltHero,
+      FitnessBoltDesktop,
+      FitnessBoltSchedule,
+      'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2670&auto=format&fit=crop'
     ],
   },
   {
