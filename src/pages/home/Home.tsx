@@ -1,7 +1,7 @@
 
 import React from 'react';
 import SEOHelmet from '@/components/SEOHelmet';
-import { Hero, Introduction, CaseStudies, CallToAction, Service, Testimonial, Faq, AiStrategy } from '@/components';
+import { Hero, Introduction, CaseStudies, CallToAction, Service, Testimonial, Faq, AiStrategy, Pricing, ChatWidget, ScrollToTop } from '@/components';
 
 const Home: React.FC = () => {
   return (
@@ -15,10 +15,13 @@ const Home: React.FC = () => {
       <Service />
       <Introduction />
       <CaseStudies />
+      <Pricing />
       <AiStrategy />
       <Testimonial />
       <Faq />
       <CallToAction />
+      <ChatWidget />
+      <ScrollToTop />
     </main>
   );
 };

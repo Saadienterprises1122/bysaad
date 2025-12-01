@@ -22,6 +22,11 @@ export { default as AiLab } from './dynamic/aiTools/lab/AiLab';
 
 // Common Components
 export { default as CallToAction } from './common/callToAction/CallToAction';
+export { default as ChatWidget } from './common/chatWidget/ChatWidget';
+export { default as ScrollToTop } from './common/scrollToTop/ScrollToTop';
+
+// Dynamic Components - Pricing
+export { default as Pricing } from './dynamic/pricing/Pricing';
 
 // Utility Components
 export { default as SEOHelmet } from './SEOHelmet';
